@@ -6,7 +6,7 @@ USER nodejs
 
 WORKDIR /usr/src/app
 
-# COPY . .
+COPY . .
 RUN npm install
 
 CMD ["node", "index.js"]
