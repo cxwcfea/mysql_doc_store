@@ -1,0 +1,27 @@
+version: '2.1'
+
+services:
+  my-db:
+    container_name: my-db
+    build: ./db
+    ports:
+      - 5306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=NiHao#0917
+    healthcheck:
+      test: exit 0
+
+  my-service:
+    container_name: my-service
+    build: .
+    volumes:
+      - '.:/usr/src/app'
+    ports:
+      - 5001:5000
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      my-db:
+        condition: service_healthy
+    links:
+      - my-db
