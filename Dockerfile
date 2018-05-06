@@ -1,10 +1,10 @@
 FROM node:8
 
-RUN groupadd -r nodejs && useradd -m -r -g nodejs -s /bin/bash nodejs
+# RUN groupadd -r nodejs && useradd -m -r -g nodejs -s /bin/bash nodejs
 
-USER nodejs
+# USER nodejs
 
-WORKDIR /home/nodejs/app
+WORKDIR /usr/src/app
 
 COPY . .
 RUN npm install
