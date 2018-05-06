@@ -1,4 +1,4 @@
-const mysqlx = require('@mysqlx/xdevapi');
+const mysqlx = require('@mysql/xdevapi');
 const assert = require('assert');
 
 const dbName = 'myproject';
